@@ -1,0 +1,67 @@
+<h2>Disciplinas</h2>
+
+<div id="geral">
+  <form>
+    <label class="col-sm-2 col-form-label">Selecione o dia da Semana: </label>
+    <select class="form-control" #dia>
+      <option value="Segunda-feira">Segunda-feira</option>
+      <option value="Terça-feira">Terça-feira</option>
+      <option value="Quarta-feira">Quarta-feira</option>
+      <option value="Quinta-feira">Quinta-feira</option>
+      <option value="Sexta-feira">Sexta-feira</option>
+      <option value="Sábado">Sábado</option>
+    </select>
+
+    <br />
+
+    <label class="col-sm-2 col-form-label">Disciplina: </label>
+    <input
+      type="text"
+      class="form-control"
+      id="autoSizingInputGroup"
+      placeholder="Digite o nome da disciplina"
+      #nome
+    />
+
+    <br />
+
+    <label class="col-sm-2 col-form-label">Insira o horário: </label>
+    <input type="time" class="form-control" #horario />
+  </form>
+
+  <button
+    class="btn btn-success border-light"
+    (click)="
+      disciplinas.adicionarDisciplina(nome.value, horario.value, dia.value);
+      nome.value = '';
+      horario.value = '';
+      dia.selectedIndex = 0
+    "
+  >
+    Incluir
+  </button>
+</div>
+
+<h3 class="h3 text-center">Grade de Disciplinas</h3>
+
+<table>
+  <thead>
+    <tr>
+      <td>Dia da semana</td>
+      <td>Disciplina</td>
+      <td>Horário</td>
+    </tr>
+  </thead>
+  <tbody id="tabela">
+    <tr *ngFor="let item of disciplinas.getDisciplinas(); index as i">
+      <td>{{ item.dia }}</td>
+      <td>{{ item.nome }}</td>
+      <td>{{ item.horario }}</td>
+      <td id="smb">
+        <button (click)="this.disciplinas.removerDisciplina(i)">
+          x
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,16 @@
+thead {
+  text-align: center;
+  font-weight: bold;
+}
+
+tbody > tr > td {
+  border: 1px solid;
+}
+
+#geral * {
+  margin-bottom: 2%;
+}
+
+#smb {
+  border-style: hidden;
+}

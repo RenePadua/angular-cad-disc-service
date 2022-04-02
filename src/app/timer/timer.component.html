@@ -1,0 +1,53 @@
+<h2>Timer</h2>
+
+<p>Insira o intervalo de tempo para contagem do temporizador</p>
+
+<table>
+  <thead>
+    <th>Intervalo:</th>
+    <th>Referência:</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>milisegundo</td>
+    </tr>
+
+    <tr>
+      <td>100</td>
+      <td>milésimo</td>
+    </tr>
+
+    <tr>
+      <td>1000</td>
+      <td>segundo</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <span id="counter">{{ timer.getCounter() }}</span>
+</p>
+
+<label>
+  <input #tempo type="number" step="1" min="1" value="100" />
+</label>
+
+<br />
+
+<div id="bts">
+  <button
+    id="close"
+    (click)="timer.startCounter(tempo.value); tempo.value = ''"
+  >
+    Iniciar
+  </button>
+
+  <button (click)="timer.stopCounter()">Parar</button>
+</div>
+
+<br />
+
+<div id="lst">
+  <button (click)="timer.resetCounter()">Reiniciar</button>
+</div>

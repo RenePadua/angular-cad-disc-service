@@ -1,0 +1,24 @@
+table,
+th,
+td {
+  border: 1px solid;
+}
+
+#close {
+  margin-right: 10%;
+  margin-left: 2%;
+}
+
+#bts {
+  margin-top: 5%;
+}
+
+#lst {
+  margin-left: 11%;
+}
+
+#counter {
+  margin-left: 16%;
+  font-weight: bold;
+  font-size: 1.5em;
+}
